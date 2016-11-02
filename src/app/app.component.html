@@ -1,0 +1,29 @@
+<md-sidenav-layout class="wrapper">
+  <md-sidenav class="sidenav" #sidenav>
+    <md-toolbar>
+      <span>Alarmanlage</span>
+    </md-toolbar>
+    <md-list class="no-padding">
+      <md-list-item><a [routerLink]="['']">
+        <md-icon>home</md-icon>
+        <span>Übersicht</span></a></md-list-item>
+      <md-list-item><a [routerLink]="['history']">
+        <md-icon>history</md-icon>
+        <span>Verlauf</span></a></md-list-item>
+      <md-divider></md-divider>
+      <md-list-item><a [routerLink]="['settings']">
+        <md-icon>settings</md-icon>
+        <span>Einstellungen</span></a></md-list-item>
+    </md-list>
+  </md-sidenav>
+
+  <md-toolbar [color]="myColor">
+    <button md-icon-button (click)="sidenav.open()">
+      <md-icon>menu</md-icon>
+    </button>
+    <span>{{title}}</span>
+    <span class="fill-remaining-space"></span>
+    <button md-raised-button (click)="toggleStatus()">{{toggleText}}</button>
+  </md-toolbar>
+  <router-outlet></router-outlet>
+</md-sidenav-layout>

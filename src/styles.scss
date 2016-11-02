@@ -1,0 +1,139 @@
+/** The overlay-container is an invisible element which contains all individual overlays. */
+.md-overlay-container {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+/** A single overlay pane. */
+.md-overlay-pane {
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.md-overlay-container .md-menu {
+  padding: 0;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+.no-padding {
+  padding: 0;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: column;
+  flex: 1 100%;
+  padding-bottom: 16px;
+
+  &:first-child {
+    padding-top: 16px;
+  }
+}
+
+.flex-item {
+  flex: auto;
+  padding: 16px;
+  padding-top: 0;
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flex-row {
+    flex-direction: row;
+  }
+  .flex-item {
+    padding-left: 0;
+    padding-bottom: 0;
+    &:first-child {
+      padding-left: 16px;
+    }
+  }
+}
+
+md-card {
+  md-card-header {
+    margin: 0;
+    padding: 16px;
+    > md-icon {
+      font-size: 40px !important;
+    }
+  }
+  md-card-content {
+    margin: 0;
+    padding: 16px;
+    md-input {
+      width: 100%;
+    }
+    .flex-row {
+      padding: 0 !important;
+      padding-bottom: 8px !important;
+      &:last-child {
+        padding-bottom: 0 !important;
+      }
+    }
+    .flex-item {
+      padding: 0 !important;
+      padding-right: 8px !important;
+      &:last-child {
+        padding-right: 0 !important;
+      }
+    }
+  }
+}
+md-card > :last-child {
+  margin-bottom: -4px !important;
+}
+
+.badge {
+  border-radius: 10px;
+  background: rgba(0,0,0,.66);
+  padding: 3px 5px;
+  color: white;
+}
+
+.sidenav {
+  min-width: 40%;
+  @media (orientation : portrait) {
+    min-width: 70%;
+  }
+
+  .md-list-item {
+    height: auto;
+    padding: 0;
+
+    a {
+      display: flex;
+      flex: auto;
+      padding: 8px 16px;
+      color: #000;
+      font-size: 1rem;
+      font-weight: 400;
+      text-decoration: none;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, .25);
+      }
+
+      span {
+        flex: auto;
+        padding: 5px;
+      }
+      md-icon {
+        color: #777;
+        margin-right: 24px;
+      }
+    }
+  }
+}

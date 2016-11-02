@@ -1,0 +1,22 @@
+<div class="flex-row">
+  <div class="flex-item">
+    <md-card class="cams">
+      <img md-card-image src="/assets/image.png">
+    </md-card>
+  </div>
+  <div class="flex-item">
+    <md-card class="cams">
+      <img md-card-image src="/assets/image.png">
+    </md-card>
+  </div>
+</div>
+
+<div class="flex-row">
+  <div class="flex-item">
+    <md-card class="no-padding">
+      <md-list class="no-padding">
+        <app-sensor *ngFor="let sensor of sensors" [sensor]="sensor"></app-sensor>
+      </md-list>
+    </md-card>
+  </div>
+</div>
