@@ -21,6 +21,8 @@ import { HistoryComponent } from './history/history.component';
 
 import {SensorsService} from "./sensors.service";
 import { SensorComponent } from './shared/sensor/sensor.component';
+import { PersonsComponent } from './settings/persons.component';
+import { ScheduleComponent } from './settings/schedule.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SensorComponent } from './shared/sensor/sensor.component';
     OverviewComponent,
     SettingsComponent,
     HistoryComponent,
-    SensorComponent
+    SensorComponent,
+    PersonsComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,

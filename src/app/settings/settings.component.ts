@@ -6,19 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
-  private showAddPerson: boolean = false;
-  private person = {
-    firstName: '',
-    lastName: '',
-    number: null
-  };
 
-  constructor() { }
+  constructor() {
 
-  ngOnInit() {
   }
 
-  toggleAddPerson() {
-    this.showAddPerson = !this.showAddPerson;
+  ngOnInit() {
+
   }
 }

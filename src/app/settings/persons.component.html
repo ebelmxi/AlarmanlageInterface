@@ -1,0 +1,47 @@
+<md-card class="no-padding">
+  <md-card-header>
+    <md-icon md-card-avatar>people</md-icon>
+    <md-card-title>Personen</md-card-title>
+    <md-card-subtitle>zweite Alarmgruppe</md-card-subtitle>
+    <span class="fill-remaining-space"></span>
+    <button md-mini-fab color="warn" (click)="showAddPerson()" *ngIf="!showInput">
+      <md-icon>add</md-icon>
+    </button>
+    <button md-mini-fab color="warn" (click)="hideInput()" *ngIf="showInput">
+      <md-icon>close</md-icon>
+    </button>
+  </md-card-header>
+  <md-divider *ngIf="showInput"></md-divider>
+  <md-card-content *ngIf="showInput">
+    <div class="flex-row">
+      <div class="flex-item">
+        <md-input placeholder="Vorname" [(ngModel)]="selectedPerson.firstName"></md-input>
+      </div>
+      <div class="flex-item">
+        <md-input placeholder="Name" [(ngModel)]="selectedPerson.lastName"></md-input>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-item">
+        <md-input placeholder="Mobilnummer" [(ngModel)]="selectedPerson.number"></md-input>
+      </div>
+    </div>
+    <div class="flex-row">
+      <button md-raised-button (click)="addPerson()" *ngIf="!selectedEdit">Add Person</button>
+      <button md-raised-button (click)="editPerson()" *ngIf="selectedEdit">Edit Person</button>
+    </div>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-list class="no-padding">
+    <md-list-item *ngFor="let person of persons; let i = index">
+      {{person.firstName}} {{person.lastName}}
+      <span class="fill-remaining-space"></span>
+      <button md-mini-fab (click)="showEditPerson(i)">
+        <md-icon>edit</md-icon>
+      </button>
+      <button md-mini-fab color="warn" style="margin-left: 8px" (click)="deletePerson(i)">
+        <md-icon>delete</md-icon>
+      </button>
+    </md-list-item>
+  </md-list>
+</md-card>

@@ -1,46 +1,13 @@
 <div class="flex-row">
   <div class="flex-item">
-    <md-card class="no-padding">
-      <md-card-header>
-        <md-icon md-card-avatar>people</md-icon>
-        <md-card-title>Personen</md-card-title>
-        <md-card-subtitle>erste Alarmgruppe</md-card-subtitle>
-        <span class="fill-remaining-space"></span>
-        <button md-mini-fab color="warn" (click)="toggleAddPerson()">
-          <md-icon *ngIf="!showAddPerson">add</md-icon>
-          <md-icon *ngIf="showAddPerson">close</md-icon>
-        </button>
-      </md-card-header>
-      <md-divider *ngIf="showAddPerson"></md-divider>
-      <md-card-content *ngIf="showAddPerson">
-        <div class="flex-row">
-          <div class="flex-item">
-            <md-input placeholder="Vorname" [value]="person.firstName"></md-input>
-          </div>
-          <div class="flex-item">
-            <md-input placeholder="Ebel" [value]="person.lastName"></md-input>
-          </div>
-        </div>
-        <div class="flex-row">
-          <div class="flex-item">
-            <md-input placeholder="Mobilnummer" [value]="person.number"></md-input>
-          </div>
-        </div>
-        <div class="flex-row">
-          <button md-raised-button (click)="addPerson()">Add</button>
-        </div>
-      </md-card-content>
-      <md-divider></md-divider>
-      <md-list class="no-padding">
-        <md-list-item>Maximilian Ebel<span class="fill-remaining-space"></span>015254063449<span
-          class="fill-remaining-space"></span>
-          <button md-mini-fab>
-            <md-icon>edit</md-icon>
-          </button>
-        </md-list-item>
-        <md-list-item>TEST</md-list-item>
-        <md-list-item>TEST</md-list-item>
-      </md-list>
-    </md-card>
+    <app-persons></app-persons>
+  </div>
+  <div class="flex-item">
+    <app-persons></app-persons>
+  </div>
+</div>
+<div class="flex-row">
+  <div class="flex-item">
+    <app-schedule></app-schedule>
   </div>
 </div>
