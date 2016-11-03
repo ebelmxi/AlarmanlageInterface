@@ -17,13 +17,13 @@
     </md-list>
   </md-sidenav>
 
-  <md-toolbar [color]="myColor">
+  <md-toolbar [color]="toolbarColor">
     <button md-icon-button (click)="sidenav.open()">
       <md-icon>menu</md-icon>
     </button>
     <span>{{title}}</span>
     <span class="fill-remaining-space"></span>
-    <button md-raised-button (click)="toggleStatus()">{{toggleText}}</button>
+    <button md-raised-button [color]="statusButtonColor" (click)="toggleStatus()">{{toggleText}}</button>
   </md-toolbar>
   <router-outlet></router-outlet>
 </md-sidenav-layout>

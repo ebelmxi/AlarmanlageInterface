@@ -8,10 +8,11 @@ import {Router} from "@angular/router";
 })
 export class AppComponent {
   @ViewChild('sidenav') sidenav;
-  title = 'Application Title';
-
-  status: boolean = true;
-  toggleText = 'Deaktivieren';
+  private title = 'Application Title';
+  private toolbarColor: 'primary'|'warn' = 'primary';
+  private statusButtonColor: 'primary'|'warn' = 'warn';
+  private status: boolean = true;
+  private toggleText = 'Deaktivieren';
 
   constructor(private router: Router) {
     this.router.events.subscribe(() => {
@@ -23,8 +24,12 @@ export class AppComponent {
     this.status = !this.status;
     if (this.status) {
       this.toggleText = 'Deaktivieren';
+      this.toolbarColor = 'primary';
+      this.statusButtonColor = 'warn';
     } else {
       this.toggleText = 'Aktivieren';
+      this.toolbarColor = 'warn';
+      this.statusButtonColor = 'primary';
     }
   }
 }

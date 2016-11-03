@@ -2,15 +2,53 @@
   <md-card-header>
     <md-icon md-card-avatar>schedule</md-icon>
     <md-card-title>Zeitplan</md-card-title>
-    <md-card-subtitle>Zeitgesteuert Aktivieren</md-card-subtitle>
+    <md-card-subtitle>Alarmanlage über Zeitplan steuern</md-card-subtitle>
+    <span class="fill-remaining-space"></span>
+    <md-slide-toggle color="primary" style="align-self: center;" [(ngModel)]="active"></md-slide-toggle>
   </md-card-header>
-  <md-list>
-    <md-list-item>Montag</md-list-item>
-    <md-list-item>Dienstag</md-list-item>
-    <md-list-item>Mittwoch</md-list-item>
-    <md-list-item>Donnerstag</md-list-item>
-    <md-list-item>Freitag</md-list-item>
-    <md-list-item>Samstag</md-list-item>
-    <md-list-item>Sonntag</md-list-item>
+  <md-divider *ngIf="active"></md-divider>
+  <md-list class="no-padding schedule" *ngIf="active">
+    <md-list-item>
+      <span class="title">Montag</span><span class="fill-remaining-space"></span>
+      <md-grid-list cols="24" rowHeight="80%" class="daySchedule">
+        <md-grid-tile *ngFor="let status of schedule.monday; let i = index" [style.background]="getColor(status)" (click)="switchStatus(schedule.monday, i)"></md-grid-tile>
+      </md-grid-list>
+    </md-list-item>
+    <md-list-item>
+      <span class="title">Dienstag</span><span class="fill-remaining-space"></span>
+      <md-grid-list cols="24" rowHeight="80%" class="daySchedule">
+        <md-grid-tile *ngFor="let status of schedule.tuesday; let i = index" [style.background]="getColor(status)" (click)="switchStatus(schedule.tuesday, i)"></md-grid-tile>
+      </md-grid-list>
+    </md-list-item>
+    <md-list-item>
+      <span class="title">Mittwoch</span><span class="fill-remaining-space"></span>
+      <md-grid-list cols="24" rowHeight="80%" class="daySchedule">
+        <md-grid-tile *ngFor="let status of schedule.wednesday; let i = index" [style.background]="getColor(status)" (click)="switchStatus(schedule.wednesday, i)"></md-grid-tile>
+      </md-grid-list>
+    </md-list-item>
+    <md-list-item>
+      <span class="title">Donnerstag</span><span class="fill-remaining-space"></span>
+      <md-grid-list cols="24" rowHeight="80%" class="daySchedule">
+        <md-grid-tile *ngFor="let status of schedule.thursday; let i = index" [style.background]="getColor(status)" (click)="switchStatus(schedule.thursday, i)"></md-grid-tile>
+      </md-grid-list>
+    </md-list-item>
+    <md-list-item>
+      <span class="title">Freitag</span><span class="fill-remaining-space"></span>
+      <md-grid-list cols="24" rowHeight="80%" class="daySchedule">
+        <md-grid-tile *ngFor="let status of schedule.friday; let i = index" [style.background]="getColor(status)" (click)="switchStatus(schedule.friday, i)"></md-grid-tile>
+      </md-grid-list>
+    </md-list-item>
+    <md-list-item>
+      <span class="title">Samstag</span><span class="fill-remaining-space"></span>
+      <md-grid-list cols="24" rowHeight="80%" class="daySchedule">
+        <md-grid-tile *ngFor="let status of schedule.saturday; let i = index" [style.background]="getColor(status)" (click)="switchStatus(schedule.saturday, i)"></md-grid-tile>
+      </md-grid-list>
+    </md-list-item>
+    <md-list-item>
+      <span class="title">Sonntag</span><span class="fill-remaining-space"></span>
+      <md-grid-list cols="24" rowHeight="80%" class="daySchedule">
+        <md-grid-tile *ngFor="let status of schedule.sunday; let i = index" [style.background]="getColor(status)" (click)="switchStatus(schedule.sunday, i)"></md-grid-tile>
+      </md-grid-list>
+    </md-list-item>
   </md-list>
 </md-card>

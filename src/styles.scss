@@ -7,6 +7,7 @@
   height: 100%;
   width: 100%;
 }
+
 /** A single overlay pane. */
 .md-overlay-pane {
   position: absolute;
@@ -92,21 +93,22 @@ md-card {
     }
   }
 }
+
 md-card > :last-child {
   margin-bottom: -4px !important;
 }
 
 .badge {
   border-radius: 10px;
-  background: rgba(0,0,0,.66);
+  background: rgba(0, 0, 0, .66);
   padding: 3px 5px;
   color: white;
 }
 
 .sidenav {
-  min-width: 40%;
-  @media (orientation : portrait) {
-    min-width: 70%;
+  min-width: 33%;
+  @media (orientation: portrait) {
+    min-width: 66%;
   }
 
   .md-list-item {
@@ -133,6 +135,41 @@ md-card > :last-child {
       md-icon {
         color: #777;
         margin-right: 24px;
+      }
+    }
+  }
+}
+
+.daySchedule {
+  width: 80%;
+  color: white;
+  md-grid-tile {
+    cursor: pointer;
+    border-radius: 2px;
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    &:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .schedule {
+    .daySchedule {
+      width: 100%;
+    }
+    .md-list-item {
+      padding-top: 20px !important;
+      position: relative;
+      .title {
+        position: absolute;
+        top: 3px;
+        left: 16px;
+        font-size: 14px;
       }
     }
   }

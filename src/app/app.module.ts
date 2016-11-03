@@ -13,6 +13,8 @@ import {MdIconModule, MdIconRegistry} from '@angular2-material/icon';
 import {MdCardModule} from "@angular2-material/card";
 import {MdListModule} from "@angular2-material/list";
 import {MdInputModule} from "@angular2-material/input";
+import {MdSlideToggleModule} from "@angular2-material/slide-toggle";
+import {MdGridListModule} from "@angular2-material/grid-list";
 
 import { AppComponent } from './app.component';
 import { OverviewComponent } from './overview/overview.component';
@@ -46,7 +48,9 @@ import { ScheduleComponent } from './settings/schedule.component';
     MdIconModule,
     MdCardModule,
     MdListModule,
-    MdInputModule
+    MdInputModule,
+    MdSlideToggleModule,
+    MdGridListModule
   ],
   providers: [
     OVERLAY_PROVIDERS,
