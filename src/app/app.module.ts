@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {AppRoutingModule} from './app-routing.module';
 
-import {OVERLAY_PROVIDERS} from '@angular2-material/core';
+import {OVERLAY_PROVIDERS, MdUniqueSelectionDispatcher} from '@angular2-material/core';
 import {MdSidenavModule} from '@angular2-material/sidenav';
 import {MdToolbarModule} from '@angular2-material/toolbar';
 import {MdButtonModule} from '@angular2-material/button';
@@ -15,6 +15,7 @@ import {MdListModule} from "@angular2-material/list";
 import {MdInputModule} from "@angular2-material/input";
 import {MdSlideToggleModule} from "@angular2-material/slide-toggle";
 import {MdGridListModule} from "@angular2-material/grid-list";
+import {MdButtonToggleModule} from "@angular2-material/button-toggle";
 
 import { AppComponent } from './app.component';
 import { OverviewComponent } from './overview/overview.component';
@@ -25,6 +26,7 @@ import {SensorsService} from "./sensors.service";
 import { SensorComponent } from './shared/sensor/sensor.component';
 import { PersonsComponent } from './settings/persons.component';
 import { ScheduleComponent } from './settings/schedule.component';
+import { SensorsComponent } from './settings/sensors.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { ScheduleComponent } from './settings/schedule.component';
     HistoryComponent,
     SensorComponent,
     PersonsComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    SensorsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,11 +53,13 @@ import { ScheduleComponent } from './settings/schedule.component';
     MdListModule,
     MdInputModule,
     MdSlideToggleModule,
-    MdGridListModule
+    MdGridListModule,
+    MdButtonToggleModule
   ],
   providers: [
     OVERLAY_PROVIDERS,
     MdIconRegistry,
+    MdUniqueSelectionDispatcher,
     SensorsService
   ],
   bootstrap: [AppComponent]

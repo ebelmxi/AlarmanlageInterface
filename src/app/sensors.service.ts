@@ -1,31 +1,29 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable, Observer} from "rxjs/Rx";
 
 @Injectable()
 export class SensorsService {
   public update$: Observable<any>;
   private updateObserver: Observer<any>;
-  private sensors;
+  private sensors = [
+    {
+      name: 'rd-kasse',
+      description: 'Radarsensor Kasse',
+      status: true,
+      since: new Date()
+    },
+    {
+      name: 'pir-saft',
+      description: 'Bewegungsmelder Saft',
+      status: true,
+      since: new Date()
+    }
+  ];
 
   constructor() {
     this.update$ = new Observable((observer) => {
       this.updateObserver = observer;
     }).share();
-
-    this.sensors = [
-      {
-        name: 'rd-kasse',
-        description: 'Radarsensor Kasse',
-        status: true,
-        since: new Date()
-      },
-      {
-        name: 'pir-saft',
-        description: 'Bewegungsmelder Saft',
-        status: true,
-        since: new Date()
-      }
-    ];
 
     setInterval(() => {
       this.updateObserver.next({
@@ -34,7 +32,7 @@ export class SensorsService {
         status: false,
         since: new Date()
       });
-    }, 2500);
+    }, 5000);
   }
 
   getSensors() {

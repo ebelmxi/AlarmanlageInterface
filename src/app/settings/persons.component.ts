@@ -40,7 +40,7 @@ export class PersonsComponent implements OnInit {
       number: ''
     };
     this.showInput = true;
-    this.selectedEdit = false;1
+    this.selectedEdit = false;
   }
   showEditPerson(index) {
     this.selectedIndex = index;
@@ -55,11 +55,6 @@ export class PersonsComponent implements OnInit {
   addPerson() {
     this.showInput = false;
     this.persons.push(this.selectedPerson);
-  }
-
-  editPerson(index) {
-    this.showInput = false;
-    this.persons[index] = this.selectedPerson;
   }
 
   deletePerson(index) {

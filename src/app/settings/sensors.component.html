@@ -1,0 +1,52 @@
+<md-card class="no-padding">
+  <md-card-header>
+    <md-icon md-card-avatar>settings_input_composite</md-icon>
+    <md-card-title>Sensoren</md-card-title>
+    <md-card-subtitle>Sensoren der Alarmanlage verwalten</md-card-subtitle>
+    <span class="fill-remaining-space"></span>
+    <button md-mini-fab color="warn" (click)="showAdd()" *ngIf="!showInput">
+      <md-icon>add</md-icon>
+    </button>
+    <button md-mini-fab color="warn" (click)="hideInput()" *ngIf="showInput">
+      <md-icon>close</md-icon>
+    </button>
+  </md-card-header>
+  <md-divider *ngIf="showInput"></md-divider>
+  <md-card-content *ngIf="showInput">
+    <div class="flex-row">
+      <div class="flex-item">
+        <md-input placeholder="Name" [(ngModel)]="inputSelected.name"></md-input>
+      </div>
+      <div class="flex-item">
+        <md-input placeholder="Beschreibung" [(ngModel)]="inputSelected.description"></md-input>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-item flex-auto">
+        Module
+        <md-button-toggle-group [(ngModel)]="inputSelected.module">
+          <md-button-toggle *ngFor="let module of modules" [value]="module">{{module}}</md-button-toggle>
+        </md-button-toggle-group>
+      </div>
+      <div class="flex-item flex-auto">
+        <md-input placeholder="Port" [(ngModel)]="inputSelected.port"></md-input>
+      </div>
+    </div>
+    <div class="flex-row">
+      <button md-raised-button (click)="addItem()" *ngIf="inputAdd">Add Sensor</button>
+    </div>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-list class="no-padding">
+    <md-list-item *ngFor="let sensor of sensors; let i = index">
+      {{sensor.description}}<span class="fill-remaining-space"></span>
+      <md-slide-toggle color="primary" style="align-self: center;" [(ngModel)]="sensor.status"></md-slide-toggle>
+      <button md-mini-fab (click)="showEdit(i)">
+        <md-icon>edit</md-icon>
+      </button>
+      <button md-mini-fab color="warn" style="margin-left: 8px" (click)="deleteItem(i)">
+        <md-icon>delete</md-icon>
+      </button>
+    </md-list-item>
+  </md-list>
+</md-card>
