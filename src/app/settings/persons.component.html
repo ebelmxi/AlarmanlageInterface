@@ -15,15 +15,15 @@
   <md-card-content *ngIf="showInput">
     <div class="flex-row">
       <div class="flex-item">
-        <md-input placeholder="Vorname" [(ngModel)]="selectedPerson.firstName"></md-input>
+        <input mdInput placeholder="Vorname" [(ngModel)]="selectedPerson.firstName">
       </div>
       <div class="flex-item">
-        <md-input placeholder="Name" [(ngModel)]="selectedPerson.lastName"></md-input>
+        <input mdInput placeholder="Name" [(ngModel)]="selectedPerson.lastName">
       </div>
     </div>
     <div class="flex-row">
       <div class="flex-item">
-        <md-input placeholder="Mobilnummer" [(ngModel)]="selectedPerson.number"></md-input>
+        <input mdInput placeholder="Mobilnummer" [(ngModel)]="selectedPerson.number">
       </div>
     </div>
     <div class="flex-row">

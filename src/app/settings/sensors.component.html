@@ -15,10 +15,10 @@
   <md-card-content *ngIf="showInput">
     <div class="flex-row">
       <div class="flex-item">
-        <md-input placeholder="Name" [(ngModel)]="inputSelected.name"></md-input>
+        <input mdInput placeholder="Name" [(ngModel)]="inputSelected.name">
       </div>
       <div class="flex-item">
-        <md-input placeholder="Beschreibung" [(ngModel)]="inputSelected.description"></md-input>
+        <input mdInput placeholder="Beschreibung" [(ngModel)]="inputSelected.description">
       </div>
     </div>
     <div class="flex-row">
@@ -29,7 +29,7 @@
         </md-button-toggle-group>
       </div>
       <div class="flex-item flex-auto">
-        <md-input placeholder="Port" [(ngModel)]="inputSelected.port"></md-input>
+        <input mdInput placeholder="Port" [(ngModel)]="inputSelected.port">
       </div>
     </div>
     <div class="flex-row">

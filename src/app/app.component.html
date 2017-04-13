@@ -1,4 +1,4 @@
-<md-sidenav-layout class="wrapper">
+<md-sidenav-container class="wrapper">
   <md-sidenav class="sidenav" #sidenav>
     <md-toolbar>
       <span>Alarmanlage</span>
@@ -26,4 +26,4 @@
     <button md-raised-button [color]="statusButtonColor" (click)="toggleStatus()">{{toggleText}}</button>
   </md-toolbar>
   <router-outlet></router-outlet>
-</md-sidenav-layout>
+</md-sidenav-container>
